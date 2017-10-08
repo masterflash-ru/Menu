@@ -1,6 +1,6 @@
 {
-    "name": "masterflash-ru/",
-    "description": "",
+    "name": "masterflash-ru/menu",
+    "description": "Генератор меню",
     "type": "Service",
     "license": "BSD-3-Clause",
     "keywords": [
@@ -16,12 +16,12 @@
     },
     "autoload": {
         "psr-4": {
-            "*\\": "src/"
+            "Menu\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "*\\": "src/"
+            "Menu\\": "src/"
         }
     },
     "extra": {
@@ -30,8 +30,8 @@
             "dev-develop": "1.0-dev"
         },
         "zf": {
-            "component": "*",
-            "config-provider": "masterflash-ru\\*\\ConfigProvider"
+            "component": "Menu",
+            "config-provider": "masterflash-ru\\Menu\\ConfigProvider"
         }
     }
 }
