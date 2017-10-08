@@ -1,5 +1,5 @@
 <?php
-namespace Seolist\View\Helper\Factory;
+namespace Menu\View\Helper\Factory;
 
 use Interop\Container\ContainerInterface;
 use Zend\ServiceManager\Factory\FactoryInterface;
@@ -8,13 +8,13 @@ use Zend\ServiceManager\Factory\FactoryInterface;
  * универсальная фабрика для меню
  * 
  */
-class Seolist implements FactoryInterface
+class Menu implements FactoryInterface
 {
     public function __invoke(ContainerInterface $container, $requestedName, array $options = null)
     {
 	   $cache = $container->get('FilesystemCache');
 	   $connection=$container->get('ADO\Connection');
-        return new $requestedName($connection,$cache);
+        return new $requestedName($connection,$cache,$container);
     }
 }
 

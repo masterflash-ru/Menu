@@ -1,6 +1,7 @@
 <?php
 namespace Menu\Lib\Func;
 
+
 class GetLocales
 {
 
@@ -8,7 +9,6 @@ class GetLocales
 public function __invoke($obj,$infa,$struct_arr,$pole_type,$pole_dop,$tab_name,$idname,$const,$id,$action)
 {
 	//выводит список локалей сайта из константы конфигурации
-
 	
 	$l=$obj->config["locale_enable_list"];// массив допустимых локалей
 		//подменить список
