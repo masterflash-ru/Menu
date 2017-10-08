@@ -1,0 +1,37 @@
+{
+    "name": "masterflash-ru/",
+    "description": "",
+    "type": "Service",
+    "license": "BSD-3-Clause",
+    "keywords": [
+        "masterflash",
+        "simba"
+    ],
+    "homepage": "https://masterflash.ru/",
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "require": {
+        "php": "^7.0",
+        "zendframework/zend-i18n": "^2.7"
+    },
+    "autoload": {
+        "psr-4": {
+            "*\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "*\\": "src/"
+        }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.0-dev",
+            "dev-develop": "1.0-dev"
+        },
+        "zf": {
+            "component": "*",
+            "config-provider": "masterflash-ru\\*\\ConfigProvider"
+        }
+    }
+}
