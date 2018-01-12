@@ -1,7 +1,6 @@
 <?php
 /*
 помощник view для вывода меню
-
 */
 
 namespace Menu\View\Helper;
@@ -21,9 +20,23 @@ class Menu extends AbstractHelper
 	protected $rs;
 	protected $container;
 
-
-public function __invoke($sysname,$locale="ru_RU")
+/*
+*$options - массив опций, ключи:
+*locale - имя локали, например, ru_RU (эта локаль по умолчанию)
+*uiclass - строка класса в тег <ul> - по умолчанию navigation
+*
+*/
+public function __invoke($sysname,array $options=null)
 {
+	if (!empty($options["locale"])){
+		$locale=$options["locale"];
+	} else {$locale="ru_RU";}
+	
+	if (!empty($options["uiclass"])){
+		$uiclass=$options["uiclass"];
+	} else {$uiclass="navigation";}
+	
+	
 	 $result = false;
 	 $key="Menu_".preg_replace('/[^0-9a-zA-Z_\-]/iu', '',$sysname)."_{$locale}";
 
@@ -42,7 +55,7 @@ public function __invoke($sysname,$locale="ru_RU")
 	$factory    = new ConstructedNavigationFactory($menu);
 	$navigation = $factory->createService($this->container);
 	$view=$this->getView();
-	return $view->navigation()->menu($navigation)->render();
+	return $view->navigation()->menu($navigation)->setUlClass($uiclass)->render();
 }
 
 

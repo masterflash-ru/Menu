@@ -10,7 +10,7 @@ public function __invoke($obj,$infa,$struct_arr,$pole_type,$pole_dop,$tab_name,$
 {
 	
 	$l=$obj->config["menu"];
-	
+	if (empty($l)) {throw new \Exception("Нет настроек типов меню в конфигурации приложения.");}
 
 	foreach ($l as $sysname=>$description)
 		{
