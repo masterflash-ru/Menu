@@ -59,7 +59,7 @@ public function __invoke($sysname,array $options=null)
 	$navigation = $factory->createService($this->container);
 	
 	$view=$this->getView();
-	if(in_array($options["tpl"],["bootstrap"]) ){
+	if(in_array($options["tpl"],["bootstrap3"]) ){
 		//если указан шаблон, то применим его
 		return $view->navigation()->menu($navigation)->setPartial($options["tpl"])->setUlClass($options["ulclass"])->renderPartialWithParams($options);
 	} 
