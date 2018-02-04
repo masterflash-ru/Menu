@@ -14,4 +14,21 @@
 $this->menu("имя_меню_из_конфига",[массив опций]);
 ```
 Опции (ключи массива):
-смотрите дефолтные параметры внутри помощника (файл menu.php)
+смотрите дефолтные параметры внутри помощника (файл menu.php):
+```php
+$_default=[
+    "locale"=>"ru_RU",                         //имя локали
+    "ulClass"=>"navigation",                   //класс для ul элемента (сдля стандартного ZEND меню)
+    "indent"=>"",
+    "minDepth"=>0,                             //минимальный уровень вывода
+    "maxDepth"=>null,                          //максимальный уровень
+    "liActiveClass"=>"active",                 //имя класса для активного пункта
+    "escapeLabels"=>true,                      //экранировать метки да/нет
+    "addClassToListItem"=>false,
+    "tpl"=>null,                               //сценарий генерации меню
+    "cssbootstrap3"=>[                         //CSS классы для разных элементов меню bootstrap3
+        "container"=>"navbar navbar-default",
+        ]
+    ];
+
+```

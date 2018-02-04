@@ -21,7 +21,13 @@ class Menu extends AbstractHelper
 	protected $container;
 	protected $_default=[
 		"locale"=>"ru_RU",			//имя локали
-		"ulclass"=>"navigation",	//класс для ul элемента (сдля стандартного ZEND меню)
+		"ulClass"=>"navigation",	//класс для ul элемента (сдля стандартного ZEND меню)
+		"indent"=>"",
+		"minDepth"=>0,				//минимальный уровень вывода
+		"maxDepth"=>null,			//максимальный уровень
+		"liActiveClass"=>"active",	//имя класса для активного пункта
+		"escapeLabels"=>true,		//экранировать метки да/нет
+		"addClassToListItem"=>false,
 		"tpl"=>null,				//сценарий генерации меню
 		"cssbootstrap3"=>[			//CSS классы для разных элементов меню bootstrap3
 			"container"=>"navbar navbar-default",
@@ -29,14 +35,10 @@ class Menu extends AbstractHelper
 	];
 
 /*
-*$options - массив опций (см. выше дефолтные объявления), ключи:
-*locale - имя локали, например, ru_RU (эта локаль по умолчанию)
-*ulclass - строка класса в тег <ul> - по умолчанию navigation
-*tpl - имя шаблона генерации, если пусто, то стандартный из Zend, 
-*		допустимо: bootstrap - для версии bootstrap3
+*$options - массив опций (см. выше дефолтные объявления), 
 * 
 */
-public function __invoke($sysname,array $options=null)
+public function __invoke($sysname,array $options=[])
 {
 
 	$options=array_replace_recursive($this->_default,$options);
@@ -61,11 +63,17 @@ public function __invoke($sysname,array $options=null)
 	$view=$this->getView();
 	if(in_array($options["tpl"],["bootstrap3"]) ){
 		//если указан шаблон, то применим его
-		return $view->navigation()->menu($navigation)->setPartial($options["tpl"])->setUlClass($options["ulclass"])->renderPartialWithParams($options);
+		return $view->navigation()->menu($navigation)
+				->setPartial($options["tpl"])->setulClass($options["ulClass"])
+				->renderPartialWithParams($options);
 	} 
 	//стандартный рендер меню
 	$view->navigation()->menu()->setPartial(null);
-	return $view->navigation()->menu($navigation)->setUlClass($options["ulclass"])->render();
+	return $view->navigation()->menu($navigation)->setulClass($options["ulClass"])
+			->setminDepth($options["minDepth"])->setmaxDepth($options["maxDepth"])
+			->setindent($options["indent"])->setliActiveClass($options["liActiveClass"])
+			->escapeLabels($options["escapeLabels"])->setaddClassToListItem($options["addClassToListItem"])
+			->render();
 }
 
 
