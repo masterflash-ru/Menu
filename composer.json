@@ -16,12 +16,12 @@
     },
     "autoload": {
         "psr-4": {
-            "Menu\\": "src/"
+            "Mf\\Menu\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Menu\\": "src/"
+            "Mf\\Menu\\": "src/"
         }
     },
     "extra": {
@@ -30,8 +30,8 @@
             "dev-develop": "1.1-dev"
         },
         "zf": {
-            "component": "Menu",
-            "config-provider": "masterflash-ru\\Menu\\ConfigProvider"
+            "component": "Mf\\Menu",
+            "config-provider": "masterflash-ru\\Mf\\Menu\\ConfigProvider"
         }
     }
 }

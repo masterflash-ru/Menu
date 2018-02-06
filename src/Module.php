@@ -3,7 +3,7 @@
 генератор меню
  */
 
-namespace Menu;
+namespace Mf\Menu;
 
 
 class Module

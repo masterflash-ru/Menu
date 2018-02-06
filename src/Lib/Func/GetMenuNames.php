@@ -1,5 +1,5 @@
 <?php
-namespace Menu\Lib\Func;
+namespace Mf\Menu\Lib\Func;
 
 
 class GetMenuNames

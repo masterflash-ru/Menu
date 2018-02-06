@@ -3,7 +3,7 @@
 помощник view для вывода меню
 */
 
-namespace Menu\View\Helper;
+namespace Mf\Menu\View\Helper;
 
 use Zend\View\Helper\AbstractHelper;
 use ADO\Service\RecordSet;

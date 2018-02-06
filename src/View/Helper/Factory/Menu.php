@@ -1,5 +1,5 @@
 <?php
-namespace Menu\View\Helper\Factory;
+namespace Mf\Menu\View\Helper\Factory;
 
 use Interop\Container\ContainerInterface;
 use Zend\ServiceManager\Factory\FactoryInterface;
