@@ -19,13 +19,13 @@ delete from design_tables where table_name='menu';
 delete from design_tables where table_name='menu';
 INSERT INTO `design_tables` (`interface_name`, `table_name`, `table_type`, `col_name`, `caption_style`, `row_type`, `col_por`, `pole_spisok_sql`, `pole_global_const`, `pole_prop`, `pole_type`, `pole_style`, `pole_name`, `default_sql`, `functions_befo`, `functions_after`, `functions_befo_out`, `functions_befo_del`, `properties`, `value`, `validator`, `sort_item_flag`, `col_function_array`) VALUES 
   ('menu', 'menu', 1, '1,1,1,1,1,0', '', 0, 0, 'locale=\"$pole_dop0\" and sysname=\"$pole_dop1\"  order by poz', '', 'id,subid,level', '', '', '', '', '', '', '', '', '', '', 'menu', 1, ''),
-  ('menu', 'menu', 1, '', '', 1, 1, '', '', 'onChange=this.form.submit()', '4', '', '', '', '', '', '\\Menu\\Lib\\Func\\GetLocales', '', 'a:2:{i:0;s:1:\"0\";i:1;s:1:\"0\";}', '', '', 0, ''),
-  ('menu', 'menu', 1, '', '', 1, 2, '', '', 'onChange=this.form.submit()', '4', '', '', '', '', '', '\\Menu\\Lib\\Func\\GetMenuNames', '', 'a:2:{i:0;s:1:\"0\";i:1;s:1:\"0\";}', '', '', 0, ''),
+  ('menu', 'menu', 1, '', '', 1, 1, '', '', 'onChange=this.form.submit()', '4', '', '', '', '', '', '\\Mf\\Menu\\Lib\\Func\\GetLocales', '', 'a:2:{i:0;s:1:\"0\";i:1;s:1:\"0\";}', '', '', 0, ''),
+  ('menu', 'menu', 1, '', '', 1, 2, '', '', 'onChange=this.form.submit()', '4', '', '', '', '', '', '\\Mf\\Menu\\Lib\\Func\\GetMenuNames', '', 'a:2:{i:0;s:1:\"0\";i:1;s:1:\"0\";}', '', '', 0, ''),
   ('menu', 'menu', 1, 'locale', '', 2, 0, '', '', '', '0', '', 'pole_dop0', '', '', '', '', '', 'N;', '', 'N;', 0, ''),
   ('menu', 'menu', 1, 'sysname', '', 2, 0, '', '', '', '0', '', 'pole_dop1', '', '', '', '', '', 'N;', '', 'N;', 0, ''),
   ('menu', 'menu', 1, 'label', '', 2, 3, '', '', '', '2', '', 'label', '', '', '', '', '', 'a:1:{i:0;s:4:\"Text\";}', '', 'N;', 0, ''),
   ('menu', 'menu', 1, 'poz', '', 2, 1, '', '', 'size=2', '2', '', 'poz', '', '', '', '', '', 'a:1:{i:0;s:4:\"Text\";}', '', 'N;', 0, ''),
-  ('menu', 'menu', 1, 'mvc', '', 2, 4, '', '', '', '4', '', 'mvc', '', '', '', '\\Menu\\Lib\\Func\\GetMvc', '', 'a:2:{i:0;s:1:\"0\";i:1;s:1:\"1\";}', '', 'N;', 0, ''),
+  ('menu', 'menu', 1, 'mvc', '', 2, 4, '', '', '', '4', '', 'mvc', '', '', '', '\\Mf\\Menu\\Lib\\Func\\GetMvc', '', 'a:2:{i:0;s:1:\"0\";i:1;s:1:\"1\";}', '', 'N;', 0, ''),
   ('menu', 'menu', 1, 'url', '', 2, 6, '', '', '', '2', '', 'url', '', '', '', '', '', 'a:1:{i:0;s:4:\"Text\";}', '', 'N;', 0, '');
 
 INSERT INTO `design_tables_text_interfase` (`language`, `table_type`, `interface_name`, `item_name`, `text`) VALUES 
