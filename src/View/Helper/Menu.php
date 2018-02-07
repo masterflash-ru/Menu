@@ -28,6 +28,7 @@ class Menu extends AbstractHelper
 		"liActiveClass"=>"active",	//имя класса для активного пункта
 		"escapeLabels"=>true,		//экранировать метки да/нет
 		"addClassToListItem"=>false,
+		"OnlyActiveBranch"=>false,	//
 		"tpl"=>null,				//сценарий генерации меню
 		"cssbootstrap3"=>[			//CSS классы для разных элементов меню bootstrap3
 			"container"=>"navbar navbar-default",
@@ -66,13 +67,14 @@ public function __invoke($sysname,array $options=[])
 		return $view->navigation()->menu($navigation)
 				->setPartial($options["tpl"])->setulClass($options["ulClass"])
 				->renderPartialWithParams($options);
-	} 
+	}
 	//стандартный рендер меню
 	$view->navigation()->menu()->setPartial(null);
 	return $view->navigation()->menu($navigation)->setulClass($options["ulClass"])
 			->setminDepth($options["minDepth"])->setmaxDepth($options["maxDepth"])
 			->setindent($options["indent"])->setliActiveClass($options["liActiveClass"])
 			->escapeLabels($options["escapeLabels"])->setaddClassToListItem($options["addClassToListItem"])
+			->setOnlyActiveBranch($options["OnlyActiveBranch"])
 			->render();
 }
 
