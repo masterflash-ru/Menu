@@ -19,6 +19,10 @@ class Menu extends AbstractHelper
 	protected $cache;
 	protected $rs;
 	protected $container;
+    protected $enable_tpl=[         /*разрешенные сценарии вывода, они внутри помощника*/
+        "navbootstrap4",
+        "bootstrap3"
+    ];
 	protected $_default=[
 		"locale"=>"ru_RU",			//имя локали
 		"ulClass"=>"navigation",	//класс для ul элемента (сдля стандартного ZEND меню)
@@ -30,7 +34,10 @@ class Menu extends AbstractHelper
 		"addClassToListItem"=>false,
 		"OnlyActiveBranch"=>false,	//
 		"tpl"=>null,				//сценарий генерации меню
-		"cssbootstrap3"=>[			//CSS классы для разных элементов меню bootstrap3
+        "css"=>[],                  //CSS в сценарий вывода, если указан tpl параметр
+		
+        /*устарело*/
+        "cssbootstrap3"=>[			//CSS классы для разных элементов меню bootstrap3
 			"container"=>"navbar navbar-default",
 		]
 	];
@@ -62,7 +69,7 @@ public function __invoke($sysname,array $options=[])
 	$navigation = $factory->createService($this->container);
 	
 	$view=$this->getView();
-	if(in_array($options["tpl"],["bootstrap3"]) ){
+	if(in_array($options["tpl"],$this->enable_tpl) ){
 		//если указан шаблон, то применим его
 		return $view->navigation()->menu($navigation)
 				->setPartial($options["tpl"])->setulClass($options["ulClass"])
