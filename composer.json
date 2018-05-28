@@ -14,6 +14,10 @@
         "php": "^7.0",
         "masterflash-ru/ado": "*"
     },
+    "conflict": {
+        "masterflash-ru/navigation": "*"
+    },
+
     "autoload": {
         "psr-4": {
             "Mf\\Menu\\": "src/"
